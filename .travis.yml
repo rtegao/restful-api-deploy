@@ -5,10 +5,8 @@ python:
 services:
   - docker
 
-before_script: pip install docker-compose
+before_script: docker build -t tegao/flask-app -f flask_app/Dockerfile.dev .
 
 script:
-  - docker-compose up --build
+  - docker run tegao/flask-app
 
-after_script:  
-  - docker stop ----time=30 foo
