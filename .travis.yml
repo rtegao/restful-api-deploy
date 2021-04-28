@@ -9,3 +9,4 @@ before_script: pip install docker-compose
 
 script:
   - docker-compose up --build
+  - docker stop ----time=30 foo
