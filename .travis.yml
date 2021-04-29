@@ -19,7 +19,7 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-2-760420876632"
   bucket_path: "api-flask-deploy"
   on:
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
 
