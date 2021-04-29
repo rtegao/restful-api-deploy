@@ -10,3 +10,16 @@ before_script: docker build -t tegao/flask-app -f flask_app/Dockerfile.dev .
 script:
   - docker run tegao/flask-app
 
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "api-flask-deploy"
+  env: "Apiflaskdeploy-env"
+  bucket_name: "elasticbeanstalk-us-east-2-760420876632"
+  bucket_path: "api-flask-deploy"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+
